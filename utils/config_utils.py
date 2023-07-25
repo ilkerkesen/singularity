@@ -71,7 +71,8 @@ def setup_main():
     config = setup_config()
     if hasattr(config, "evaluate") and config.evaluate:
         config = setup_evaluate_config(config)    
-    init_distributed_mode(config)
+    # no need to use the distributed stuff.
+    # init_distributed_mode(config)
 
     if is_main_process():
         setup_output_dir(config.output_dir, excludes=["code"])
